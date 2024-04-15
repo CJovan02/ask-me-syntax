@@ -1,13 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { RiSpeakFill } from "react-icons/ri";
 import { FiRefreshCcw } from "react-icons/fi";
 import classes from "./Pitanje.module.css";
 
 function Pitanje({ svaPitanja, imePitanja }) {
+  console.log('nigga');
   const [novoPitanje, setNovoPitanje] = useState("Press the button");
   const [refresh, setRefresh] = useState(false);
   const [pitanjaArray, setPitanjaArray] = useState(JSON.parse(JSON.stringify(svaPitanja)));
-  console.log(pitanjaArray);
 
   function getPitanjeHandler(event) {
 
