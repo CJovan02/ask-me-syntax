@@ -6,6 +6,7 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   animation: animate-in 0.5s ease-out forwards;
   display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -52,5 +53,28 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    margin-bottom: 3.5rem;
+  }
+
+  .dugme {
+    font-size: 1rem;
+    width: 9rem;
+    min-width: 7rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .pitanje {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .imePitanja {
+    font-size: 1.25rem;
   }
 }

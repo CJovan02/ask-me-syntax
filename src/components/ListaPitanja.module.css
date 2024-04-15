@@ -8,3 +8,9 @@
   grid-template-columns: 100%;
   justify-content: center;
 }
+
+@media (max-width: 500px) {
+  .listaPitanja {
+    max-width: 300px;
+  }
+}
