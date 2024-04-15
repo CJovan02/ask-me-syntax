@@ -2,7 +2,7 @@ import { useState } from "react";
 import classes from "./Pitanje.module.css";
 
 function Pitanje({ svaPitanja, imePitanja }) {
-  const [novoPitanje, setNovoPitanje] = useState("<= Pritisni");
+  const [novoPitanje, setNovoPitanje] = useState("Press the button");
 
   function getPitanjeHandler(event) {
     setNovoPitanje(svaPitanja[Math.floor(Math.random() * svaPitanja.length)]);
