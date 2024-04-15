@@ -70,11 +70,13 @@
   }
 
   .pitanje {
-    font-size: 1rem;
     margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.85rem;
   }
 
   .imePitanja {
     font-size: 1.25rem;
+    line-height: 2.25rem;
   }
 }

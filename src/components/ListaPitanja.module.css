@@ -12,5 +12,6 @@
 @media (max-width: 500px) {
   .listaPitanja {
     max-width: 300px;
+    margin: 0.5rem auto;
   }
 }

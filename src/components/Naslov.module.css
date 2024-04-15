@@ -11,5 +11,6 @@
     .naslov {
         max-width: 300px;
         font-size: 1.75rem;
+        padding-bottom: 2.75rem;
     }
 }
