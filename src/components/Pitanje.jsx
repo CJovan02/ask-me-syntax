@@ -1,19 +1,23 @@
-import { useState } from 'react';
+import { useState } from "react";
 import classes from "./Pitanje.module.css";
 
-function Pitanje({ brojPitanja, svaPitanja }) {
-  const [ novoPitanje, setNovoPitanje ] = useState('<= Pritisni');
+function Pitanje({ svaPitanja, imePitanja }) {
+  const [novoPitanje, setNovoPitanje] = useState("<= Pritisni");
 
   function getPitanjeHandler(event) {
-    const pitanja = svaPitanja();
-    setNovoPitanje(pitanja[Math.floor((Math.random() * pitanja.length))]);
+    setNovoPitanje(svaPitanja[Math.floor(Math.random() * svaPitanja.length)]);
   }
 
   return (
-    <li className={classes.container}>
-      <button className={classes.dugme} onClick={getPitanjeHandler}>{brojPitanja}</button>
-      <p className={classes.pitanje}>{novoPitanje}</p>
-    </li>
+    <>
+      <p className={classes.imePitanja}>{imePitanja}</p>
+      <li className={classes.container}>
+        <button className={classes.dugme} onClick={getPitanjeHandler}>
+          Ask Me
+        </button>
+        <p className={classes.pitanje}>{novoPitanje}</p>
+      </li>
+    </>
   );
 }
 

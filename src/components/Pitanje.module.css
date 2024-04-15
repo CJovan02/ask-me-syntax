@@ -1,5 +1,5 @@
 .container {
-  margin: 1rem 0;
+  margin: 1rem 0 5rem 0;
   padding: 1rem;
   background-color: #9c7eee;
   border-radius: 8px;
@@ -16,6 +16,7 @@
   margin: 0;
   text-transform: uppercase;
   width: 10rem;
+  min-width: 10rem;
   height: 3rem;
   border-radius: 5px;
   border: 0;
@@ -30,9 +31,17 @@
 .pitanje {
   white-space: pre-wrap;
   font-size: 1.25rem;
-  margin: 0 0 0 1rem;
+  margin: 0 0 0 1.25rem;
   font-style: italic;
   animation: animate-in 1s ease-out forwards;
+  text-align: left;
+  line-height: 2rem;
+}
+
+.imePitanja {
+  font-size: 1.5rem;
+  text-align: left;
+  margin: 0;
 }
 
 @keyframes animate-in {

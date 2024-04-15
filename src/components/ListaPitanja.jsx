@@ -1,13 +1,12 @@
 import classes from './ListaPitanja.module.css'
 import Pitanje from "./Pitanje.jsx";
-import { prvoPitanje, drugoPitanje, trecePitanje } from "./pitanja.jsx";
+import data from '../../pitanjaData.json';
 
 function ListaPitanja() {
   return (
     <ul className={classes.listaPitanja}>
-      <Pitanje brojPitanja="1. Pitanje" svaPitanja={prvoPitanje} />
-      <Pitanje brojPitanja="2. Pitanje" svaPitanja={drugoPitanje} />
-      <Pitanje brojPitanja="3. Pitanje" svaPitanja={trecePitanje} />
+      <Pitanje imePitanja={data.vezbanja[0].imePitanja} svaPitanja={data.vezbanja[0].pitanja} />
+      <Pitanje imePitanja={data.vezbanja[1].imePitanja} svaPitanja={data.vezbanja[1].pitanja} />
     </ul>
   );
 }
