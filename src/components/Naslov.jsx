@@ -9,11 +9,6 @@ function Naslov({refresh}) {
         <BsFillPencilFill />
         Exercises for syntax
       </h1>
-
-      <button className={classes.dugme} onClick={refresh} type="button">
-        <FiRefreshCcw size={16} />
-        Refresh Questions
-      </button>
     </header>
   );
 }

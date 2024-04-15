@@ -1,32 +1,55 @@
 import { useState } from "react";
 import { RiSpeakFill } from "react-icons/ri";
+import { FiRefreshCcw } from "react-icons/fi";
 import classes from "./Pitanje.module.css";
 
 function Pitanje({ svaPitanja, imePitanja }) {
   const [novoPitanje, setNovoPitanje] = useState("Press the button");
-  let pitanjaArray = [];
-  pitanjaArray = svaPitanja;
+  const [refresh, setRefresh] = useState(false);
+  const [pitanjaArray, setPitanjaArray] = useState(JSON.parse(JSON.stringify(svaPitanja)));
+  console.log(pitanjaArray);
 
   function getPitanjeHandler(event) {
-    console.log(pitanjaArray);
+
+    if(refresh)
+      setRefresh(false);
+    if(pitanjaArray.length == 0)
+    {
+      setRefresh(true);
+      return;
+    }
+
     const index = Math.floor(Math.random() * pitanjaArray.length);
+    const newArray = [...pitanjaArray];
     setNovoPitanje(pitanjaArray[index]);
-    pitanjaArray.splice(index, 1);
+    newArray.splice(index, 1);
+    setPitanjaArray(newArray);
   }
 
   function refreshHandler(event) {
-    pitanjaArray = svaPitanja;
+    setRefresh(false);
+    setPitanjaArray(JSON.parse(JSON.stringify(svaPitanja)));
+    setNovoPitanje("Questions refreshed!")
   }
 
   return (
     <>
       <p className={classes.imePitanja}>{imePitanja}</p>
       <li className={classes.container}>
-        <button className={classes.dugme} onClick={getPitanjeHandler}>
-          <RiSpeakFill />
+        {
+          !refresh 
+          ?
+          <button className={classes.dugme} onClick={getPitanjeHandler}>
+          <RiSpeakFill size={20} />
           Ask Me
         </button>
-        <p className={classes.pitanje}>{pitanjaArray.length != 0 ? novoPitanje : "All questions asked, please refresh them"}</p>
+        :
+        <button className={classes.refresh} onClick={refreshHandler}>
+          <FiRefreshCcw size={18} />
+          Refresh
+        </button>
+        }
+        <p className={classes.pitanje}>{!refresh ? novoPitanje : "All questions asked, please refresh them"}</p>
       </li>
     </>
   );

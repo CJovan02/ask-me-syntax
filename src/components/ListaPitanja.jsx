@@ -5,8 +5,9 @@ import data from '../../pitanjaData.json';
 function ListaPitanja() {
   return (
     <ul className={classes.listaPitanja}>
-      <Pitanje imePitanja={data.vezbanja[0].imePitanja} svaPitanja={data.vezbanja[0].pitanja} />
-      <Pitanje imePitanja={data.vezbanja[1].imePitanja} svaPitanja={data.vezbanja[1].pitanja} />
+      {data.vezbanja.map(vezbanje => {
+        return <Pitanje key={vezbanje.imePitanja} imePitanja={vezbanje.imePitanja} svaPitanja={vezbanje.pitanja} />
+      })}
     </ul>
   );
 }
