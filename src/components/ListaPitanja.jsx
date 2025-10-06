@@ -1,6 +1,6 @@
 import classes from './ListaPitanja.module.css'
 import Pitanje from "./Pitanje.jsx";
-import data from '../../pitanjaData.json';
+import data from '../data/pitanjaData.json'
 
 function ListaPitanja() {
   return (
