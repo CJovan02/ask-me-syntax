@@ -3,7 +3,7 @@ import { RiSpeakFill } from "react-icons/ri";
 import { FiRefreshCcw } from "react-icons/fi";
 import classes from "./Pitanje.module.css";
 
-function Pitanje({ svaPitanja, imePitanja }) {
+function Pitanje({ svaPitanja, imePitanja, showCount }) {
   const [novoPitanje, setNovoPitanje] = useState("Press the button");
   const [refresh, setRefresh] = useState(false);
   const [pitanjaArray, setPitanjaArray] = useState([...svaPitanja]);
@@ -51,7 +51,7 @@ function Pitanje({ svaPitanja, imePitanja }) {
           </p>
         </div>
 
-        <p className={classes.counter}>{pitanjaArray.length} left</p>
+        {showCount && <nav className={classes.counter}>{pitanjaArray.length} left</nav>}
       </li>
     </>
   );

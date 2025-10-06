@@ -9,6 +9,18 @@
   justify-content: center;
 }
 
+.toggleContainer {
+  max-width: 60rem;
+  /* margin: 1rem auto; */
+  text-align: left;
+}
+
+.toggleContainer label {
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 @media (max-width: 500px) {
   .listaPitanja {
     max-width: 300px;
