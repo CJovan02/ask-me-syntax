@@ -32,27 +32,31 @@ function Pitanje({ svaPitanja, imePitanja, showCount }) {
     <>
       <p className={classes.imePitanja}>{imePitanja}</p>
       <li className={classes.container}>
-        <div className={classes.leftGroup}>
-          {!refresh ? (
-            <button className={classes.dugme} onClick={getPitanjeHandler}>
-              <RiSpeakFill size={20} />
-              Ask Me
-            </button>
-          ) : (
-            <button className={classes.refresh} onClick={refreshHandler}>
-              <FiRefreshCcw size={18} />
-              Refresh
-            </button>
-          )}
-          <p className={classes.pitanje}>
-            {!refresh
-              ? novoPitanje
-              : "All questions asked, please refresh them"}
-          </p>
-        </div>
+  {!refresh ? (
+    <button className={classes.dugme} onClick={getPitanjeHandler}>
+      <RiSpeakFill size={20} />
+      Ask Me
+    </button>
+  ) : (
+    <button className={classes.refresh} onClick={refreshHandler}>
+      <FiRefreshCcw size={18} />
+      Refresh
+    </button>
+  )}
 
-        {showCount && <nav className={classes.counter}>{pitanjaArray.length} left</nav>}
-      </li>
+  <p className={classes.pitanje}>
+    {!refresh
+      ? novoPitanje
+      : "All questions asked, please refresh them"}
+  </p>
+
+  {showCount && (
+    <nav className={classes.counter}>
+      {pitanjaArray.length} left
+    </nav>
+  )}
+</li>
+
     </>
   );
 }

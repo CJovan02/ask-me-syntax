@@ -11,6 +11,11 @@
   gap: 1rem; /* opcionalno za malo prostora */
 }
 
+/* desktop default */
+.dugme, .refresh  { order: 1; }
+.pitanje { order: 2; flex: 1; }
+.counter { order: 3; }
+
 .leftGroup {
   display: flex;
   align-items: center;
@@ -30,6 +35,7 @@
 .dugme {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.9rem 1.75rem;
   font-size: 1.25rem;
@@ -64,7 +70,8 @@
 
 .refresh {
   display: inline-flex;
-  align-items: center;
+    align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   min-height: 50px;
   min-width: 155.65px;
@@ -117,22 +124,28 @@
 @media (max-width: 500px) {
   .container {
     flex-direction: column;      /* sve ide jedno ispod drugog */
-    align-items: flex-start;     /* poravnanje na levu stranu */
+    align-items: stretch;     /* poravnanje na levu stranu */
     gap: 0.75rem;
     margin-bottom: 3.5rem;
   }
 
   .leftGroup {
     flex-direction: column;      /* dugme + pitanje jedno ispod drugog */
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0.5rem;
   }
+
+  .pitanje { order: 1; }
+  .counter { order: 2; }
+  .dugme, .refresh { order: 3; }      /* dugme pada ispod svega */
 
   .dugme,
   .refresh {
     font-size: 1rem;
     width: 100%;                /* zauzima celu širinu */
+    max-width: none;
     min-width: unset;
+    margin-top: 0.7rem;
   }
 
   .pitanje {
