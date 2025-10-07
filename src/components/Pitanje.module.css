@@ -113,41 +113,41 @@
   }
 }
 
+/* ======== MOBILE LAYOUT ======== */
 @media (max-width: 500px) {
-  @media (max-width: 500px) {
-    .container {
-      flex-direction: column;
-      align-items: flex-start; /* brojač ide ispod */
-    }
+  .container {
+    flex-direction: column;      /* sve ide jedno ispod drugog */
+    align-items: flex-start;     /* poravnanje na levu stranu */
+    gap: 0.75rem;
+    margin-bottom: 3.5rem;
+  }
 
-    .counter {
-      align-self: flex-end; /* ili centriraj ako ti lepše izgleda */
-      margin-top: 0.5rem;
-    }
+  .leftGroup {
+    flex-direction: column;      /* dugme + pitanje jedno ispod drugog */
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 
-    .container {
-      flex-direction: column;
-      align-items: flex-start; /* brojač ide ispod */
-      margin-bottom: 3.5rem;
-    }
+  .dugme,
+  .refresh {
+    font-size: 1rem;
+    width: 100%;                /* zauzima celu širinu */
+    min-width: unset;
+  }
 
-    .dugme,
-    .refresh {
-      font-size: 1rem;
-      width: 9rem;
-      min-width: 7rem;
-      margin-bottom: 1.25rem;
-    }
+  .pitanje {
+    font-size: 1.15rem;
+    line-height: 1.85rem;
+  }
 
-    .pitanje {
-      margin: 0;
-      font-size: 1.15rem;
-      line-height: 1.85rem;
-    }
+  .counter {
+    align-self: flex-end;       /* brojač skroz desno ili promeni na center ako hoćeš */
+    margin-left: 0;
+    font-size: 1.15rem;
+  }
 
-    .imePitanja {
-      font-size: 1.25rem;
-      line-height: 2.25rem;
-    }
+  .imePitanja {
+    font-size: 1.25rem;
+    line-height: 2.25rem;
   }
 }
